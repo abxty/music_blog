@@ -1,0 +1,175 @@
+/* =========================
+   GLOBAL RESET + BASE
+   ========================= */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;        /* softer than pure black */
+    color: #e6e6e6;                 /* off-white text */
+    font-family: 'DM Serif Display', serif;
+}
+
+/* =========================
+   HEADER + NAV
+   ========================= */
+
+header {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #f5f5f5;
+}
+
+nav a {
+    color: #cfcfcf;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* =========================
+   PAGE CONTAINER (UNCHANGED)
+   ========================= */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* =========================
+   INTRO
+   ========================= */
+
+.intro {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+    color: #d0d0d0;
+}
+
+/* =========================
+   TRACK GRID (UNCHANGED)
+   ========================= */
+
+.track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+/* clickable wrapper */
+.track-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.25s ease;
+}
+
+.track-link:hover {
+    opacity: 0.85;
+}
+
+/* =========================
+   TRACK CARD (AESTHETIC ONLY)
+   ========================= */
+
+.track-card {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #181818;     /* subtle card contrast */
+    padding: 22px;
+}
+
+.track-card img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    margin-bottom: 18px;
+    filter: grayscale(5%);         /* very subtle editorial touch */
+}
+
+.track-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: #f0f0f0;
+}
+
+.track-card p {
+    font-size: 0.95rem;
+    opacity: 0.75;
+}
+
+/* =========================
+   REVIEW PAGE
+   ========================= */
+
+.review-page {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.review-page img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    margin: 40px 0;
+}
+
+.review-page h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    color: #f5f5f5;
+}
+
+.review-page h2 {
+    font-size: 1.4rem;
+    opacity: 0.75;
+    margin-bottom: 24px;
+}
+
+.meta {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 45px;
+}
+
+.review-text {
+    text-align: left;
+    line-height: 1.85;
+    font-size: 1.05rem;
+    color: #dddddd;
+}
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.85;
+    font-size: 1.1rem;
+    color: #d6d6d6;
+}
+
+.about p {
+    margin-bottom: 26px;
+}

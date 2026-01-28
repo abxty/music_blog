@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Home · ABXTY AUDIT{% endblock %}
+
+{% block content %}
+<main>
+    <section class="intro">
+        <p>
+            Weekly reviews of underground UK music currently in my rotation.
+        </p>
+
+        <p>
+            most Recent Review
+        </p>
+    </section>
+
+    <section class="track-grid">
+        <p>
+        {% for track in tracks %}
+        <a href="/review/{{ track.id }}" class="track-link">
+            <article class="track-card">
+                <img src="{{ url_for('static', filename=track.image_path) }}">
+                <h2>{{ track.track_name }}</h2>
+                <p>{{ track.artist }}</p>
+            </article>
+        </a>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ track.Track_name }} · Review{% endblock %}
+
+{% block content %}
+<main class="review-page">
+    <h1>{{ track.track_name }}</h1>
+    <h2>{{ track.artist }}</h2>
+
+    <img src="{{ url_for('static', filename=track.image_path) }}">
+
+    <p class="meta">
+        {{ track.genre }} · {{ track.year }}
+    </p>
+
+    <article class="review-text">
+        {{ review_html | safe }}
+    </article>
+</main>
+{% endblock %}

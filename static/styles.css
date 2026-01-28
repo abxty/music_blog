@@ -173,3 +173,98 @@ main {
 .about p {
     margin-bottom: 26px;
 }
+/* =========================
+   COMMENTS SECTION
+   ========================= */
+   .comments {
+    margin-top: 60px;
+    text-align: left;
+}
+
+.comments h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* Comment Form */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    color: #f5f5f5;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.comment-form input::placeholder,
+.comment-form textarea::placeholder {
+    color: #999;
+}
+
+.comment-form button {
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    color: #111;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.comment-form button:hover {
+    opacity: 0.85;
+}
+
+/* Existing Comments */
+.existing-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment {
+    background-color: #181818;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.comment p {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.comment p strong {
+    color: #f5f5f5;
+}
+
+.comment p em {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .comment-form input,
+    .comment-form textarea {
+        font-size: 0.95rem;
+    }
+
+    .comment-form button {
+        width: 100%;
+    }
+}

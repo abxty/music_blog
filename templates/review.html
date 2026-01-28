@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ track.Track_name }} · Review{% endblock %}
+{% block title %}{{ track.track_name }} · Review{% endblock %}
 
 {% block content %}
 <main class="review-page">
@@ -15,5 +15,31 @@
     <article class="review-text">
         {{ review_html | safe }}
     </article>
+
+    <!-- =========================
+         COMMENTS SECTION
+         ========================= -->
+    <section class="comments">
+        <h3>Comments</h3>
+
+        <!-- Comment Form -->
+        <form method="POST" class="comment-form">
+            <input type="text" name="username" placeholder="Your name" required>
+            <textarea name="comment" placeholder="Write a comment..." required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+
+        <!-- Existing Comments -->
+        <div class="existing-comments">
+            {% for c in comments %}
+            <div class="comment">
+                <p><strong>{{ c.username }}</strong> <em>{{ c.timestamp }}</em></p>
+                <p>{{ c.comment }}</p>
+            </div>
+            {% else %}
+            <p>No comments yet. Be the first!</p>
+            {% endfor %}
+        </div>
+    </section>
 </main>
 {% endblock %}

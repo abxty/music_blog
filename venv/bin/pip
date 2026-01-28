@@ -1,4 +1,9 @@
-#!/Users/samloots/Music_blog/venv/bin/python3.14
+git init
+git add .
+git commit -m "Initial deploy-ready version"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/music_blog.git
+git push -u origin main#!/Users/samloots/Music_blog/venv/bin/python3.14
 import sys
 from pip._internal.cli.main import main
 if __name__ == '__main__':

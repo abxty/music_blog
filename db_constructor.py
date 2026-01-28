@@ -40,8 +40,32 @@ def add_tracks(tracks):
     conn.close()
 
 
+def make_comments_table():
+    """
+    Create the Comments table if it doesn't exist.
+    Stores: track_id, username, comment, timestamp
+    """
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS Comments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            track_id INTEGER NOT NULL,
+            username TEXT NOT NULL,
+            comment TEXT NOT NULL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY(track_id) REFERENCES Tracks(id)
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+
+
 if __name__ == "__main__":
     make_db()
+    make_comments_table()
 
     tracks = [
         (

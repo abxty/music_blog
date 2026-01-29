@@ -35,11 +35,11 @@ def homepage():
 @app.route("/blogs")
 def blogs():
     conn = get_db_connection()
-    track = conn.execute(
-    "SELECT * FROM Tracks ORDER BY id DESC LIMIT 1"
-    ).fetchone()
+    tracks = conn.execute(
+        "SELECT * FROM Tracks ORDER BY id DESC"
+    ).fetchall()
     conn.close()
-    return render_template("homepage.html", track=track)
+    return render_template("blogs.html", tracks=tracks)
 
 
 @app.route("/review/<int:track_id>", methods=["GET", "POST"])

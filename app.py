@@ -25,21 +25,21 @@ if not os.path.exists("music.db"):
 @app.route("/")
 def homepage():
     conn = get_db_connection()
-    tracks = conn.execute(
-        "SELECT * FROM Tracks ORDER BY id DESC LIMIT 3"
-    ).fetchall()
+    track = conn.execute(
+        "SELECT * FROM Tracks ORDER BY id DESC LIMIT 1"
+    ).fetchone()
     conn.close()
-    return render_template("homepage.html", tracks=tracks)
+    return render_template("homepage.html", track=track)
 
 
 @app.route("/blogs")
 def blogs():
     conn = get_db_connection()
-    tracks = conn.execute(
-        "SELECT * FROM Tracks ORDER BY id DESC"
-    ).fetchall()
+    track = conn.execute(
+    "SELECT * FROM Tracks ORDER BY id DESC LIMIT 1"
+    ).fetchone()
     conn.close()
-    return render_template("blogs.html", tracks=tracks)
+    return render_template("homepage.html", track=track)
 
 
 @app.route("/review/<int:track_id>", methods=["GET", "POST"])

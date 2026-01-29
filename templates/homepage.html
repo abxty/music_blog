@@ -9,21 +9,20 @@
         </p>
 
         <p>
-            most Recent Review
+            <br>
+            most Recent Review:
         </p>
     </section>
 
     <section class="track-grid">
         <p>
-        {% for track in tracks %}
-        <a href="/review/{{ track.id }}" class="track-link">
-            <article class="track-card">
-                <img src="{{ url_for('static', filename=track.image_path) }}">
-                <h2>{{ track.track_name }}</h2>
-                <p>{{ track.artist }}</p>
-            </article>
-        </a>
-        {% endfor %}
+            <a href="/review/{{ track.id }}" class="track-link">
+                <article class="track-card featured">
+                    <img src="{{ url_for('static', filename=track.image_path) }}">
+                    <h2>{{ track.Track_name }}</h2>
+                    <p>{{ track.Track_artist }}</p>
+                </article>
+            </a>
     </section>
 </main>
 {% endblock %}

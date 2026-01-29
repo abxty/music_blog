@@ -95,7 +95,7 @@ if __name__ == "__main__":
         (
             "The Boy Who Cried Terrified",
             "Fakemink",
-            "images/The_Boy_Who_Cried_Terrified.jpg",
+            "images/The_Boy_Who_Cried_Terrified.jpeg",
             "2025",
             "Jerk/Uk/Cloud",
             "reviews/The_Boy_Who_Cried_Terrified.md"

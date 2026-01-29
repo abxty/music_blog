@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL RESET + BASE
-   ========================= */
+
 
    * {
     margin: 0;
@@ -9,8 +7,8 @@
 }
 
 body {
-    background-color: #111;        /* softer than pure black */
-    color: #e6e6e6;                 /* off-white text */
+    background-color: #111;       
+    color: #e6e6e6;                 
     font-family: 'DM Serif Display', serif;
 }
 
@@ -93,7 +91,7 @@ main {
     max-width: 320px;
     margin: 0 auto;
     text-align: center;
-    background-color: #181818;     /* subtle card contrast */
+    background-color: #181818;     
     padding: 22px;
 }
 
@@ -102,7 +100,7 @@ main {
     max-height: 260px;
     object-fit: contain;
     margin-bottom: 18px;
-    filter: grayscale(5%);         /* very subtle editorial touch */
+    filter: grayscale(5%);      
 }
 
 .track-card h2 {
@@ -257,7 +255,6 @@ main {
     color: #999;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
     .comment-form input,
     .comment-form textarea {

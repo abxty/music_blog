@@ -91,6 +91,14 @@ if __name__ == "__main__":
             "2025",
             "Quote: \"I'm on my own wave\"",
             "reviews/brazil.md"
+        ),
+        (
+            "The Boy Who Cried Terrified",
+            "Fakemink",
+            "images/The_Boy_Who_Cried_Terrified.jpg",
+            "2025",
+            "Jerk/Uk/Cloud",
+            "reviews/The_Boy_Who_Cried_Terrified.md"
         )
     ]
 

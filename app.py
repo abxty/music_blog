@@ -79,7 +79,7 @@ def review(track_id):
     with open(review_path, "r", encoding="utf-8") as f:
         review_md = f.read()
 
-    review_html = markdown.markdown(review_md)
+    review_html = markdown.markdown(review_md, extensions=["nl2br"])
 
     return render_template(
         "review.html",

@@ -1,0 +1,286 @@
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;       
+    color: #e6e6e6;                 
+    font-family: 'DM Serif Display', serif;
+}
+
+/* =========================
+   HEADER + NAV
+   ========================= */
+
+header {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #f5f5f5;
+}
+
+nav a {
+    color: #cfcfcf;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 2rem;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* =========================
+   PAGE CONTAINER (UNCHANGED)
+   ========================= */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* =========================
+   INTRO
+   ========================= */
+
+.intro {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+    color: #d0d0d0;
+}
+
+/* =========================
+   TRACK GRID (UNCHANGED)
+   ========================= */
+
+.track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+/* clickable wrapper */
+.track-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.25s ease;
+}
+
+.track-link:hover {
+    opacity: 0.85;
+}
+
+/* =========================
+   TRACK CARD (AESTHETIC ONLY)
+   ========================= */
+
+.track-card.featured {
+    max-width: 600px;
+    margin: 0 auto;
+}   
+
+.track-card {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #181818;     
+    padding: 22px;
+}
+
+.track-card img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    margin-bottom: 18px;
+    filter: grayscale(5%);      
+}
+
+.track-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: #f0f0f0;
+}
+
+.track-card p {
+    font-size: 0.95rem;
+    opacity: 0.75;
+}
+
+/* =========================
+   REVIEW PAGE
+   ========================= */
+
+.review-page {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.review-page img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    margin: 40px 0;
+}
+
+.review-page h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    color: #f5f5f5;
+}
+
+.review-page h2 {
+    font-size: 1.4rem;
+    opacity: 0.75;
+    margin-bottom: 24px;
+}
+
+.meta {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 45px;
+}
+
+.review-text {
+    text-align: left;
+    line-height: 1.85;
+    font-size: 1.05rem;
+    color: #dddddd;
+}
+
+.review-text p {
+    margin-bottom: 1.4em;
+}
+
+.review-text h1,
+.review-text h2,
+.review-text h3,
+.review-text h4 {
+    margin: 1.6em 0 0.8em;
+}
+
+.review-text ul,
+.review-text ol {
+    margin: 1em 0 1em 1.5em;
+}
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.85;
+    font-size: 1.1rem;
+    color: #d6d6d6;
+}
+
+.about p {
+    margin-bottom: 26px;
+}
+/* =========================
+   COMMENTS SECTION
+   ========================= */
+   .comments {
+    margin-top: 60px;
+    text-align: left;
+}
+
+.comments h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* Comment Form */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    color: #f5f5f5;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.comment-form input::placeholder,
+.comment-form textarea::placeholder {
+    color: #999;
+}
+
+.comment-form button {
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    color: #111;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.comment-form button:hover {
+    opacity: 0.85;
+}
+
+/* Existing Comments */
+.existing-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment {
+    background-color: #181818;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.comment p {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.comment p strong {
+    color: #f5f5f5;
+}
+
+.comment p em {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+@media (max-width: 600px) {
+    .comment-form input,
+    .comment-form textarea {
+        font-size: 0.95rem;
+    }
+
+    .comment-form button {
+        width: 100%;
+    }
+}

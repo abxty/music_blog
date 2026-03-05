@@ -1,7 +1,7 @@
 import sqlite3
 import markdown
 import os
-from db_constructor import make_db, make_comments_table, add_tracks
+from db_constructor import make_db, make_comments_table, seed_tracks
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
@@ -16,11 +16,9 @@ def get_db_connection():
     return conn
 
 
-# Ensure database exists
-if not os.path.exists("music.db"):
-    make_db()
-    make_comments_table()
-
+make_db()
+make_comments_table()
+seed_tracks()
 
 @app.route("/")
 def homepage():

@@ -8,6 +8,29 @@
 
     <img src="{{ url_for('static', filename=track.image_path) }}">
 
+  <!-- LOCAL AUD -->
+    {% if track.local_playback %}
+    <div class="audio-player">
+        <audio controls autoplay>
+            <source src="{{ url_for('static', filename=track.local_playback) }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    {% elif track.youtube_id %}
+    <!--YT FAILSAFE -->
+    <div class="youtube-player">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/{{ track.youtube_id }}?rel=0&autoplay=1"
+            title="YouTube player"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+    {% endif %}
+
     <p class="meta">
         {{ track.genre }} · {{ track.year }}
     </p>
@@ -16,20 +39,16 @@
         {{ review_html | safe }}
     </article>
 
-    <!-- =========================
-         COMMENTS SECTION
-         ========================= -->
+    <!--  COMMENTS SECTION -->
     <section class="comments">
         <h3>Comments</h3>
 
-        <!-- Comment Form -->
         <form method="POST" class="comment-form">
             <input type="text" name="username" placeholder="Your name" required>
             <textarea name="comment" placeholder="Write a comment..." required></textarea>
             <button type="submit">Post Comment</button>
         </form>
 
-        <!-- Existing Comments -->
         <div class="existing-comments">
             {% for c in comments %}
             <div class="comment">

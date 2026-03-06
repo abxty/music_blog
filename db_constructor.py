@@ -16,7 +16,8 @@ def make_db():
             image_path TEXT NOT NULL,
             year TEXT NOT NULL,
             genre TEXT NOT NULL,
-            review_path TEXT NOT NULL
+            review_path TEXT NOT NULL,
+            local_playback Text NOT NULL
         )
     """)
 
@@ -30,7 +31,8 @@ tracks = [
         "images/jdrly_canvas.jpg",
         "2025",
         "Cloud rap / UK rap",
-        "reviews/canvas.md"
+        "reviews/canvas.md",
+        "audio_files/canvas.mp3"
     ),
     (
         "ZSL Freestyle",
@@ -38,7 +40,8 @@ tracks = [
         "images/zino_vinci_ZSL.jpg",
         "2025",
         "UK rap / Sample rap",
-        "reviews/zsl-freestyle.md"
+        "reviews/zsl-freestyle.md",
+        "audio_files/YSL_Freestyle.mp3"
     ),
     (
         "Brazil",
@@ -46,7 +49,9 @@ tracks = [
         "images/thrice_dtr.jpg",
         "2025",
         "Quote: \"I'm on my own wave\"",
-        "reviews/brazil.md"
+        "reviews/brazil.md",
+        "audio_files/brazil.mp3"
+
     ),
     (
         "The Boy Who Cried Terrified",
@@ -54,7 +59,8 @@ tracks = [
         "images/The_Boy_Who_Cried_Terrified.jpeg",
         "2026",
         "Jerk/Uk/Cloud",
-        "reviews/The_Boy_Who_Cried_Terrified.md"
+        "reviews/The_Boy_Who_Cried_Terrified.md",
+        "audio_files/TBWCT.mp3"
     ),
     (
         "Stick around",
@@ -62,7 +68,9 @@ tracks = [
         "images/Stick_Around.jpeg",
         "2025",
         "UK/Cloud",
-        "reviews/stick_around.md"
+        "reviews/stick_around.md",
+        "audio_files/stick_around.mp3"
+
     ),
     (
         "Shoebox",
@@ -70,7 +78,8 @@ tracks = [
         "images/Shoebox.jpeg",
         "2025",
         "Uk / Alt Rap / Cloud / Jerk",
-        "reviews/shoebox.md"
+        "reviews/shoebox.md",
+        "audio_files/shoebox.mp3"
     )
 ]
 
@@ -86,8 +95,8 @@ def seed_tracks():
     if count == 0:
         cursor.executemany("""
             INSERT INTO Tracks
-            (track_name, artist, image_path, year, genre, review_path)
-            VALUES (?, ?, ?, ?, ?, ?)
+            (track_name, artist, image_path, year, genre, review_path, local_playback)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
         """, tracks)
 
     conn.commit()

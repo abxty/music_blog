@@ -197,10 +197,13 @@ main {
 .audio-player {
     width: 100%;
     margin: 20px 0;
+    overflow: hidden;
 }
 
 .audio-player audio {
     width: 100%;
+    max-width: 100%;
+    display: block;
     filter: invert(1);
 }
 
@@ -334,9 +337,16 @@ main {
         gap: 40px;
     }
 
-    .likert-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 0.85rem;
+    .rating-left,
+    .rating-right {
+        min-width: 100%;
+    }
+
+    .rating-score {
+        font-size: 2rem;
+    }
+
+    .submit-rating-btn {
+        width: 100%;
     }
 }

@@ -206,6 +206,7 @@ main {
     max-width: 100%;
     display: block;
     box-sizing: border-box;
+    
 }
 
 /* =========================
@@ -350,4 +351,7 @@ main {
     .submit-rating-btn {
         width: 100%;
     }
-}
+    .review-page {
+    padding: 20px 16px;
+    }
+}   

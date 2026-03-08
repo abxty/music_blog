@@ -197,7 +197,8 @@ main {
 .audio-player {
     width: 100%;
     margin: 20px 0;
-    overflow: hidden;
+    padding: 0 2px;
+    box-sizing: border-box;
 }
 
 .audio-player audio {
@@ -205,6 +206,7 @@ main {
     max-width: 100%;
     display: block;
     filter: invert(1);
+    box-sizing: border-box;
 }
 
 /* =========================

@@ -31,4 +31,4 @@
 
     A slightly lighter review this time. Thought I’d ease the vibe a bit after the roasting I gave Mink a few weeks ago.
 
-    RATING: 8.3/10
+    ## RATING: 8.3/10

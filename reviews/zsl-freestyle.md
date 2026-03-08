@@ -10,3 +10,5 @@ I'm going to refrain from yapping about the beat too much, as obviously this is 
 In my opinion, no one can match this guy’s energy and passion for rap. You can hear it in his delivery and output, and I truly think he’s going to go global soon come. What really sums up this guys love for the game is a line he repeats often in ZSL, *“Rap is Art”*, you can hear in his work that he truly lives and believes this, and I entirely agree. This track differs a lot from his other work, and I really hope he puts more trakcs out like this, as this is where Zino is really in his bag.
 
 This has been my most played track for the past few weeks and will probably stay that way, it's addicting and just sounds better and better every time I play it. Overall, Zino represents exactly why the UK scene is thriving — hunger for success, love for the craft, and an ear for addictive beats. What a track.
+
+# Track Rating:8.7/10

@@ -11,3 +11,5 @@ The fact that he produces almost all of his own beats only strengthens that clai
 *Brazil* is a top three Ricky track for me. The sample is incredibly creative, the drums compliment it perfectly, and Ricky glides across the beat. Call it glaze if you want, but he’s genuinely approaching GOAT status.
 
 Fuck with it or don’t, bozo.
+
+## Rating: 8.2/10

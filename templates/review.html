@@ -6,28 +6,15 @@
     <h1>{{ track.track_name }}</h1>
     <h2>{{ track.artist }}</h2>
 
-    <img src="{{ url_for('static', filename=track.image_path) }}">
+    <img src="{{ url_for('static', filename=track.image_path) }}" alt="{{ track.track_name }} cover art">
 
-  <!-- LOCAL AUD -->
+    <!-- AUDIO PLAYER -->
     {% if track.local_playback %}
     <div class="audio-player">
-        <audio controls autoplay>
+        <audio controls>
             <source src="{{ url_for('static', filename=track.local_playback) }}" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-    </div>
-    {% elif track.youtube_id %}
-    <!--YT FAILSAFE -->
-    <div class="youtube-player">
-        <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/{{ track.youtube_id }}?rel=0&autoplay=1"
-            title="YouTube player"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-        </iframe>
     </div>
     {% endif %}
 
@@ -39,26 +26,85 @@
         {{ review_html | safe }}
     </article>
 
-    <!--  COMMENTS SECTION -->
-    <section class="comments">
-        <h3>Comments</h3>
+    <!-- COMMUNITY RATING SECTION -->
+    <section class="community-rating">
+        <div class="rating-display">
+            <div class="rating-left">
+                <p class="rating-label">Community Rating</p>
+                <p class="rating-score" id="avg-score">
+                    {% if avg_score %}{{ avg_score }}/10{% else %}No ratings yet{% endif %}
+                </p>
+                <p class="rating-votes" id="total-votes">
+                    {% if total_votes > 0 %}{{ total_votes }} rating{% if total_votes != 1 %}s{% endif %}{% endif %}
+                </p>
 
-        <form method="POST" class="comment-form">
-            <input type="text" name="username" placeholder="Your name" required>
-            <textarea name="comment" placeholder="Write a comment..." required></textarea>
-            <button type="submit">Post Comment</button>
-        </form>
-
-        <div class="existing-comments">
-            {% for c in comments %}
-            <div class="comment">
-                <p><strong>{{ c.username }}</strong> <em>{{ c.timestamp }}</em></p>
-                <p>{{ c.comment }}</p>
+                <!-- Meter bar -->
+                <div class="rating-meter-track">
+                    <div class="rating-meter-fill" id="rating-meter"
+                         style="width: {% if avg_score %}{{ (avg_score / 10 * 100)|round }}%{% else %}0%{% endif %}">
+                    </div>
+                </div>
             </div>
-            {% else %}
-            <p>No comments yet. Be the first!</p>
-            {% endfor %}
+
+            <div class="rating-right">
+                <p class="rating-label">Rate this track</p>
+                <div class="slider-wrap">
+                    <input
+                        type="range"
+                        id="rating-slider"
+                        min="1" max="10" step="1"
+                        value="{{ user_rating if user_rating else 5 }}"
+                    >
+                    <span class="slider-value" id="slider-value">
+                        {{ user_rating if user_rating else 5 }}
+                    </span>
+                </div>
+                <button class="submit-rating-btn" id="submit-btn" onclick="submitRating()">
+                    {% if user_rating %}Update Rating{% else %}Submit Rating{% endif %}
+                </button>
+                <p class="rating-feedback" id="rating-feedback">
+                    {% if user_rating %}You rated this {{ user_rating }}/10 — adjust and resubmit to change{% else %}Drag to select, then submit{% endif %}
+                </p>
+            </div>
         </div>
     </section>
 </main>
+
+<script>
+    const trackId = {{ track.id }};
+    const slider = document.getElementById("rating-slider");
+    const sliderValue = document.getElementById("slider-value");
+
+    slider.addEventListener("input", () => {
+        sliderValue.textContent = slider.value;
+    });
+
+    function submitRating() {
+        const score = parseInt(slider.value);
+
+        fetch(`/review/${trackId}/rate`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ score: score })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.error) return;
+
+            document.getElementById("avg-score").textContent = data.avg_score + "/10";
+            const votes = data.total_votes;
+            document.getElementById("total-votes").textContent = votes + " rating" + (votes !== 1 ? "s" : "");
+
+            const pct = (data.avg_score / 10 * 100).toFixed(0);
+            document.getElementById("rating-meter").style.width = pct + "%";
+
+            document.getElementById("submit-btn").textContent = "Update Rating";
+            document.getElementById("rating-feedback").textContent =
+                "You rated this " + score + "/10 — adjust and resubmit to change";
+        })
+        .catch(() => {
+            document.getElementById("rating-feedback").textContent = "Something went wrong, try again.";
+        });
+    }
+</script>
 {% endblock %}

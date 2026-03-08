@@ -205,7 +205,6 @@ main {
     width: 100%;
     max-width: 100%;
     display: block;
-    filter: invert(1);
     box-sizing: border-box;
 }
 

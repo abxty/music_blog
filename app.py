@@ -32,6 +32,28 @@ def get_db_connection():
 def get_pg_connection():
     return psycopg2.connect(os.environ["DATABASE_URL"])
 
+try:
+    pg = get_pg_connection()
+    cur = pg.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    cur.execute(
+        "SELECT ROUND(AVG(score)::numeric, 1) as avg_score, COUNT(*) as total FROM ratings WHERE track_id = %s",
+        (track_id,)
+    )
+    rating_data = cur.fetchone()
+    cur.execute(
+        "SELECT score FROM ratings WHERE track_id = %s AND session_id = %s",
+        (track_id, session["session_id"])
+    )
+    existing = cur.fetchone()
+    cur.close()
+    pg.close()
+    user_rating = existing["score"] if existing else None
+    avg_score = float(rating_data["avg_score"]) if rating_data["avg_score"] else None
+    total_votes = rating_data["total"]
+except Exception:
+    user_rating = None
+    avg_score = None
+    total_votes = 0
 
 # ── Startup ───────────────────────────────────────────────────────────────────
 

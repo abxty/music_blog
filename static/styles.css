@@ -10,10 +10,6 @@ body {
     font-family: 'DM Serif Display', serif;
 }
 
-/* =========================
-   HEADER + NAV
-   ========================= */
-
 header {
     text-align: center;
     padding: 40px 0 30px;
@@ -38,19 +34,11 @@ nav a:hover {
     opacity: 0.7;
 }
 
-/* =========================
-   PAGE CONTAINER
-   ========================= */
-
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
 }
-
-/* =========================
-   INTRO
-   ========================= */
 
 .intro {
     text-align: center;
@@ -58,10 +46,6 @@ main {
     font-size: 1.1rem;
     color: #d0d0d0;
 }
-
-/* =========================
-   TRACK GRID
-   ========================= */
 
 .track-grid {
     display: grid;
@@ -79,10 +63,6 @@ main {
 .track-link:hover {
     opacity: 0.85;
 }
-
-/* =========================
-   TRACK CARD
-   ========================= */
 
 .track-card.featured {
     max-width: 600px;
@@ -115,10 +95,6 @@ main {
     font-size: 0.95rem;
     opacity: 0.75;
 }
-
-/* =========================
-   REVIEW PAGE
-   ========================= */
 
 .review-page {
     max-width: 800px;
@@ -174,10 +150,6 @@ main {
     margin: 1em 0 1em 1.5em;
 }
 
-/* =========================
-   ABOUT PAGE
-   ========================= */
-
 .about {
     max-width: 800px;
     margin: 0 auto;
@@ -189,10 +161,6 @@ main {
 .about p {
     margin-bottom: 26px;
 }
-
-/* =========================
-   CUSTOM AUDIO PLAYER
-   ========================= */
 
 .audio-player {
     display: flex;

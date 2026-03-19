@@ -80,6 +80,15 @@ tracks = [
         "Uk / Alt Rap / Cloud / Jerk",
         "reviews/shoebox.md",
         "audio_files/shoebox.mp3"
+    ),
+    (
+        "Relaxation Zen Room",
+        "Deathtoricky",
+        "images/Relaxation_Zen_Room.jpeg",
+        "2025",
+        "Irish / Rap / Melodic / Heat",
+        "reviews/Relaxation_Zen_Room.md",
+        "audio_files/Motives.mp3"
     )
 ]
 

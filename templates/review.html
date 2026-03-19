@@ -8,7 +8,7 @@
 
     <img src="{{ url_for('static', filename=track.image_path) }}" alt="{{ track.track_name }} cover art">
 
-    <!-- CUSTOM AUDIO PLAYER -->
+    <!-- CUSTOM AUDIO PLAYBACK (IOS format issues with native)-->
     {% if track.local_playback %}
     <div class="audio-player" id="audio-player">
         <audio id="audio" src="{{ url_for('static', filename=track.local_playback) }}"></audio>
@@ -85,7 +85,7 @@
 </main>
 
 <script>
-    // ── Custom audio player ──────────────────────────────
+    // ──  audio player ──────────────────────────────
     const audio = document.getElementById("audio");
     const playIcon = document.getElementById("play-icon");
     const pauseIcon = document.getElementById("pause-icon");
